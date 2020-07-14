@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <h1>Current Date</h1>
+    </head>
+    <body>
+        <script>
+            var cdate = new Date();
+            var date = cdate.getDate();
+            var month = cdate.getMonth()+1; 
+            var year = cdate.getFullYear();
+            if(date<10) 
+            {
+                date='0'+date;
+            } 
+
+            if(month<10) 
+            {
+                month='0'+month;
+            } 
+            cdate = month+'-'+date+'-'+year;
+            document.write(cdate +",");
+            
+            cdate = month+'/'+date+'/'+year;
+            document.write(cdate);
+        </script>
+    </body>
+</html>
+
