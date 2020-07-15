@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var,let,const</title>
+</head>
+<body>
+    <div>
+        <h2>The Difference among Var,Let and Const </h2>
+        <ul>
+            <li>var declarations are globally scoped or function scoped</li>
+            <li>while let and const are block scoped </li>
+        </ul>
+    </div>
+        <b>Example for Var</b>
+            <p>The scope of a variable defined with the keyword “var” is limited to the “function” within which it is
+                defined.<br>If it is defined outside any function, the scope of the variable is global.
+                var is “function scoped”.</p>
+        <script>
+            
+            {
+                var a=17;
+                console.log("var a:",a);
+            }
+            //block 1
+            {
+                a++;
+                console.log("var a:",a);
+            }
+            //block 2
+            /* Since we are using "var a=17", scope of "a" is limited to the function within which it is defined. In this case it is within the global function scope */
+        </script>
+        <b>Example for Let</b>
+        <p>The scope of a variable defined with the keyword “let” or “const” is limited to the “block” defined by
+            curly braces i.e. {}.</p>
+        
+        <script>
+          
+            {
+                let b=20;
+                console.log("let b :",b);
+            }
+           
+            //block 1
+            {
+                b++;
+                console.log("let b :",b);
+            }
+            //block 2
+            /* Since we are using "let b=20", scope of "b" is limited to block 1 and "b" is not recognized in block 2 */
+            
+        </script>
+        <b> Example For const</b>
+        <p>The scope of a variable defined with the keyword “const” is limited to the block defined by curly
+            braces. However if a variable is defined with keyword const, it cannot be reassigned.<br>
+            “const” cannot be re-assigned to a new value. However it <b>CAN</b> be mutated.
+        </p>
+            <script>
+            {
+                const PI=3.14;
+                console.log("const PI :",PI);
+            }
+            //block 1
+            {
+                console.log("const PI :",PI);
+            }
+            //block 2
+            /* Since we are using "const PI=3.14", scope of "PI" is limited to block 1 and "PI" is not recognized in block 2 */
+        </script>    
+    </body>
+</html>
