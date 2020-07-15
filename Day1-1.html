@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>console</title>
+            <h2>Different Console Methods</h2>
+            <h3>Press F12 on your keyboard to view the message in the console view.</h3>
+            <p>This console.log() - Outputs a message to the console</p>
+            <p>This console.error() - Outputs an error message to the console</p>
+            <p>This console.warn() - Outputs a warning message to the console</p>
+            <p>This console.info() - Outputs an informational message to the console</p>
+            <p>This console.time() & console.timeEnd - starts the timer and Stops a timer that was previously started by console.time()</p>
+            <p>This console.count() - Logs the number of times that this particular call to count() has been called</p>
+            <p>This console.assert() -This method writes a message to the console, but only if an expression evaluates to false</p>
+            <p>This console.trace() - method displays a trace that show how the code ended up at a certain point</p>
+            <button onclick="myFunction()">Start Trace</button>
+        </head>
+        <body>
+            <script>
+                var myObj1 = {Name:"John",Age : "25"};
+                var myObj2 = {Name:"Andrews",Age:"28"};
+                var myObj3 = {Name:"Mathew",Age:"18"};
+                //console.log()                
+                console.log("Hello this is an example of console.log()");
+                //console.error()                
+                console.error("An error is occured");
+                //console.warn                
+                console.warn("This is a warning statement");                
+                //console.info
+                console.info(myObj1);
+                //console.table
+                console.table({myObj1,myObj2,myObj3});
+                //console.time() and console.timeEnd()
+                console.time('a')
+                //console.count
+                for(let i = 0;i < 10; i++){
+                    console.count(i);
+                }
+                console.timeEnd('a'); 
+                //console.assert()
+                console.assert(5>10);
+                //console.trace()                
+                function myFunction() {
+                    myOtherFunction();
+                }
+
+                function myOtherFunction() {
+                    console.trace();
+                }           
+
+            </script>    
+        </body>
+</html>
