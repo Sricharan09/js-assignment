@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - 1</title>
+</head>
+<body>
+    <h1>Day 5 Assignment 1</h1>
+    <b>Write the program which does the following things</b>
+    <ol>
+        <li>Takes a positivwe number from the user</li>
+        <li>Makes an array of numbers till the number given by user</li>
+        <li>Use of higjer order function to filter the odd</li>
+        <li>Generate and array the cubes of the filtered numbers</li>
+    </ol>
+
+
+    <script>
+        var range =prompt ("Enter a Range");
+        var arr=[];
+        //storing values in array
+        let i = 0;
+        while (i < range) {
+            let number = prompt("Enter the number");
+            if (number < 0) {
+                continue; 
+            }
+            else {
+                arr.push(number);
+                i++;
+            }
+        }
+        //array elements
+        console.log(arr)
+        //odd values in array
+        var odd = arr.filter(i=>i%2!==0);
+        //cube of odd values in array
+        var oddSquares = arr.filter(i=>i%2!==0).map(i=>i**3);        
+        console.log(odd);
+        console.log(oddSquares);
+    </script>
+    
+</body>
+</html>

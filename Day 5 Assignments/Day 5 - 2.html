@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - 2</title>
+</head>
+<body>
+    <script>
+        <h2>ASSIGNMENT 2 DAY 5</h2>
+        class User {
+            constructor(name, age,email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                this.Coins = 0;
+                this.courses = [];
+            }
+            login(){
+                console.log(` ${this.name} has logged in`);
+                return this;
+            }
+            logout(){
+                console.log(`${this.name} has logged out`);
+                return this;
+            }
+        }
+        class Moderator extends User{
+            addCoins(user,Coins) {
+                user.Coins =Coins;
+                console.log(`${user.name} has ${user.Coins} coins`);
+                return this;
+            } 
+            removeCoins(user,Coins){
+                user.Coins -= Coins;
+                console.log(`${user.name} has ${user.Coins} coins`);
+                return this;
+            }
+        }
+        class Admin extends Moderator{
+            addCourse(user,course){
+                user.courses.push(course);
+                console.log(`Admin has added ${course}`);
+                console.log(user);
+                return this;
+            }
+            removeCourse(user,course){
+                user.courses = user.courses.filter(courses=>courses!==course);
+                console.log(`Admin has deleted ${course}`);
+                console.log(user);
+                return this;
+            }
+        }
+
+        let user1 = new User('pradeep',25,'pra_deep@gmail.com')
+        let user2 = new User('Kashmora',24,'kas@gmai.com')
+        let mod = new Moderator('siva',24,'codersiva@gmail.com','Moderator');
+        let admin = new Admin('thava',25,'dhavasiva@gmail.com');
+        let users = [user1,user2,mod,admin];
+
+        console.log(`1) Number of coins earned by the users...`);
+        //Adding coins to the users
+        mod.addCoins(user1, 20);
+        mod.addCoins(user2, 50);
+
+        console.log("2) Courses enrolled by the users...");
+        //Adding courses to the users
+        admin.addCourse(user1, 'Python');
+        admin.addCourse(user1, 'C#');
+        admin.addCourse(user2, 'Java Script');
+        admin.addCourse(user2, 'DBMS');
+
+        console.log(`3) Remaining coins after reduction...`);
+        // Removing coins to the users
+        mod.removeCoins(user1, 5);
+        mod.removeCoins(user2, 20);
+
+        console.log("4) Courses yet to complete...");
+        // Removing the completed courses...
+        admin.removeCourse(user1, 'Python');
+        admin.removeCourse(user2, 'DBMS');
+        // users.forEach(element => {
+        // console.log(element);
+        // });
+        // mod.addCoins(user1);
+        // mod.addCoins(user1);
+        // mod.addCoins(user1);
+        // admin.removeCourse(user1,'Java');
+        // admin.addCourse(user1,'Javascript');
+        // admin.addCourse(user2,'Python');
+        // mod.removecoins(user1);
+
+    </script>
+    
+</body>
+</html>
