@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT 3 DAY 6</title>
+    <style>
+        .myStyle {
+            background-color: black;
+            color: white;
+
+        }
+
+        .btnclr {
+            background-color: rgb(245, 2, 2);
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body id="bdy">
+    <div style="background-color:yellowgreen;">
+        <h2 style="text-align: center;">DAY 6 ASSIGNMENT 3 </h2>
+    </div>
+    <div>
+        <P id="para1" style="text-align: center;">DARK MODE <button id="btn" type="button" onclick="myFunction()">CLICK
+                ME!!</button></P>
+    </div>
+    <span>
+        <p id="time" style="background-color: rgb(138, 180, 180);padding: 8px;">
+        <p>
+    </span>
+    <span>
+        <h1 id="para2" style="background-color: rgb(138, 180, 180);"></h1>
+    </span>
+    <script>
+        function myFunction() {
+            document.getElementById("bdy").classList.toggle("myStyle");
+            // document.getElementById("sample").classList.toggle("myStyle");
+            document.getElementById("btn").classList.toggle("btnclr");
+
+        }
+        const ctime = document.getElementById('time');
+        function clock() {
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            ctime.innerText = time;
+        }
+
+        // clock();
+        setInterval(clock, 1000);
+        const name = prompt("Enter your name");
+        para2.innerHTML += `WELCOME ${name}`;
+
+    </script>
+
+</body>
+
+</html>
